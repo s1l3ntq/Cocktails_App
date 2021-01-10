@@ -1,0 +1,8 @@
+<h1>Cocktails</h1>
+
+<% @cocktails.each do |cocktail| %>
+<h2><%= cocktail.name %></h2>
+<p><%= cocktail.ingredient %></p>
+<p2><%= cocktail.instruction %></p2>
+<img scr="<%= cocktail.image %>" alt="cocktail">
+<% end %>
