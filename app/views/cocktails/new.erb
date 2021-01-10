@@ -1,0 +1,13 @@
+<h1>Create your Cocktail</h1>
+<p><%= @error %></p>
+<form action="/cocktails" method="post">
+    <label>Title:</label>
+    <input type="text" name="name">
+    <label>Ingredients:</label>
+    <input type="text" name="ingredient1">
+    <label>Recipe:</label>
+    <input type="text" name="instruction">
+    <label>Image URL:</label>
+    <input type="text" name="image">
+    <button type="submit"> Add Beverage</button>
+</form>
