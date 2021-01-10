@@ -10,12 +10,17 @@ module Cocktaildb
         end
 
         def fetch_cocktails
-            cocktails = JSON.parse(RestClient.get(BASE_URL))
+            cocktails = JSON.parse(RestClient.get(cocktail_url))
 
             cocktails['drinks'].each do |drink|
                 cocktail = ::Cocktail.new
                 cocktail.name = drink["strDrink"]
-                cocktail.ingredient = drink["strIngredient"]
+                cocktail.ingredient1 = drink["strIngredient1"]
+                cocktail.ingredient2 = drink["strIngredient2"]
+                cocktail.ingredient3 = drink["strIngredient3"]
+                cocktail.ingredient4 = drink["strIngredient4"]
+                cocktail.ingredient5 = drink["strIngredient5"]
+                cocktail.ingredient6 = drink["strIngredient6"]
                 cocktail.instruction = drink["strInstructions"]
                 cocktail.image = drink["strDrinkThumb"]
 
@@ -24,6 +29,10 @@ module Cocktaildb
         end
 
         private
+           def cocktail_url
+            "#{BASE_URL}#{@cocktail}"
+           end
+
            def virgin_cocktail(cocktail)
             cocktail.gsub(/\w+/,'').downcase
            end
