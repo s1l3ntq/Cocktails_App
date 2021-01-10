@@ -1,3 +1,3 @@
 Cocktail.destroy_all
 
-Cocktaildb::Adapter.new("GG").fetch_cocktails
+Cocktaildb::Adapter.new("").fetch_cocktails

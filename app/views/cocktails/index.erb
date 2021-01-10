@@ -2,7 +2,12 @@
 
 <% @cocktails.each do |cocktail| %>
 <h2><%= cocktail.name %></h2>
-<p><%= cocktail.ingredient %></p>
-<p2><%= cocktail.instruction %></p2>
+<p><%= cocktail.ingredient1 %></p>
+<p2><%= cocktail.ingredient2 %></p2>
+<p3><%= cocktail.ingredient3 %></p3>
+<p4><%= cocktail.ingredient4 %></p4>
+<p5><%= cocktail.ingredient5 %></p5>
+<p6><%= cocktail.ingredient6 %></p6>
+<p7><%= cocktail.instruction %></p7>
 <img scr="<%= cocktail.image %>" alt="cocktail">
 <% end %>
