@@ -1,5 +1,3 @@
-
-
 class CocktailsController < ApplicationController
     get '/cocktails/new' do #create
         erb :'/cocktails/new'
