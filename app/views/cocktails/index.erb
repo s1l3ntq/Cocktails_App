@@ -10,9 +10,12 @@
 <p5><%= cocktail.ingredient5 %></p5>
 <p6><%= cocktail.ingredient6 %></p6>
 <p7><%= cocktail.instruction %></p7> -->
-<img scr="<%= cocktail.image %>" alt="cocktail">
-<form action="/cocktails/<%=cocktail.id%>" method="post">
+<img scr="<%= cocktail.image %>">
+
+<% if cocktail.id > 203 %>
+  <form action="/cocktails/<%=cocktail.id%>" method="post">
     <input type="hidden" name="_method" value="delete"> 
     <input type="submit" value= "delete">
   </form>
+  <% end %>
 <% end %>

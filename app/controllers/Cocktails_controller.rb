@@ -25,6 +25,7 @@ class CocktailsController < ApplicationController
         @cocktail = Cocktail.find(params[:id])
         erb :'/cocktails/show'
     end
+    
     get '/cocktails/:id/edit' do
         @cocktail = Cocktail.find(params[:id])
         erb :'/cocktails/edit'
