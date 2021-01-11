@@ -1,0 +1,12 @@
+=> [32m#<Cocktail:0x00005569f94d5db0[0m
+ id: [1;34m179[0m,
+ user_id: [1;36mnil[0m,
+ name: [31m[1;31m"[0m[31mGG[1;31m"[0m[31m[0m,
+ ingredient1: [31m[1;31m"[0m[31mGalliano[1;31m"[0m[31m[0m,
+ instruction: [31m[1;31m"[0m[31mPour the Galliano liqueur over ice. Fill the remainder of the glass with ginger ale and thats all there is to it. You now have a your very own GG.[1;31m"[0m[31m[0m,
+ image: [31m[1;31m"[0m[31mhttps://www.thecocktaildb.com/images/media/drink/vyxwut1468875960.jpg[1;31m"[0m[31m[0m,
+ ingredient2: [31m[1;31m"[0m[31mGinger ale[1;31m"[0m[31m[0m,
+ ingredient3: [31m[1;31m"[0m[31mIce[1;31m"[0m[31m[0m,
+ ingredient4: [1;36mnil[0m,
+ ingredient5: [1;36mnil[0m,
+ ingredient6: [1;36mnil[0m[32m>[0m
