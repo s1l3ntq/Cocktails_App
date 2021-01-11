@@ -6,4 +6,5 @@ end
 
 use Rack::MethodOverride
 use CocktailsController
+use UsersController
 run ApplicationController
