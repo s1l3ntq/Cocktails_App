@@ -36,7 +36,12 @@ class CocktailsController < ApplicationController
         
             @cocktail.update(name: params["name"], ingredient1: params["ingredient1"], instruction: params["instruction"], image: params["image"])
             redirect '/cocktails'
-        # cocktail.update(name: params["name"], ingredient1: params["ingredient1"], instruction: params["instruction"], image: params["image"]
+    end
+
+    delete '/cocktails/:id' do
+        @cocktail = Cocktail.find(params[:id])
+        @cocktail.destroy
+        redirect '/cocktails'
     end
     
 end
