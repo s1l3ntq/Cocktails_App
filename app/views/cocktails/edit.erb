@@ -1,14 +1,14 @@
 <h1>Edit your Cocktail for <%= @cocktail.name %></h1>
 <p><%= @error %></p>
-<form action="/cocktails/<%=@cocktail.id%>" method="post">
+<form action="/cocktails/<%= @cocktail.id %>" method="post">
 <input type="hidden" name="_method" value="patch">
     <label>Title:</label>
-    <input type="text" name="name">
+    <input type="text" name="name" value="<%=@cocktail.name %>"/>
     <label>Ingredients:</label>
-    <input type="text" name="ingredient1">
+    <input type="text" name="ingredient1"value="<%=@cocktail.ingredient1 %>"/>
     <label>Recipe:</label>
-    <input type="text" name="instruction">
+    <input type="text" name="instruction" value="<%=@cocktail.instruction %>"/>
     <label>Image URL:</label>
-    <input type="text" name="image">
+    <input type="text" name="image" value="<%=@cocktail.image %>"/>
     <button type="submit"> Edit Beverage</button>
 </form>

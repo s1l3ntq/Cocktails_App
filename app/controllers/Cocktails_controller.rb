@@ -22,25 +22,21 @@ class CocktailsController < ApplicationController
     end
 
     get '/cocktails/:id' do #Read
-        @cocktail = Cocktail.find(params['id'])
+        @cocktail = Cocktail.find(params[:id])
         erb :'/cocktails/show'
     end
     get '/cocktails/:id/edit' do
-        @cocktail = Cocktail.all.find(params['id'])
+        @cocktail = Cocktail.find(params[:id])
         erb :'/cocktails/edit'
     end
 
     patch '/cocktails/:id' do
-        cocktail = Cocktail.find(params['id'])
-        if !cocktail.name.empty? && !cocktail.ingredient1.empty?
-            cocktail.update()
-            redirect '/cocktails'
-        else
-            @error = "User must input Title and Ingredients to continue."
-            erb :'/cocktails/edit'
-        end
-        cocktail.update(name: params["name"], ingredient1: params["ingredient1"], instruction: params["instruction"], image: params["image"])
+    
+        @cocktail = Cocktail.find(params[:id])
         
+            @cocktail.update(name: params["name"], ingredient1: params["ingredient1"], instruction: params["instruction"], image: params["image"])
+            redirect '/cocktails'
+        # cocktail.update(name: params["name"], ingredient1: params["ingredient1"], instruction: params["instruction"], image: params["image"]
     end
     
 end
