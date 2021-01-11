@@ -23,7 +23,7 @@ module Cocktaildb
                 cocktail.ingredient6 = drink["strIngredient6"]
                 cocktail.instruction = drink["strInstructions"]
                 cocktail.image = drink["strDrinkThumb"]
-
+                
                 cocktail.save
             end
         end

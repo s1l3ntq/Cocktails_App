@@ -12,9 +12,9 @@
 <p5><%= cocktail.ingredient5 %></p5>
 <p6><%= cocktail.ingredient6 %></p6>
 <p7><%= cocktail.instruction %></p7> -->
-<img scr="<%= cocktail.image %>">
+<img src="<%= cocktail.image %>" alt="https://img1.mashed.com/img/gallery/the-most-popular-cocktails-to-make-during-quarantine/intro-1590094211.jpg" width="110" height="100">
 
-<% if cocktail.id > 203 %>
+<% if cocktail.id > 232 %>
   <form action="/cocktails/<%=cocktail.id%>" method="post">
     <input type="hidden" name="_method" value="delete"> 
     <input type="submit" value= "delete">

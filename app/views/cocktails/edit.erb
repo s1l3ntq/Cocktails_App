@@ -1,7 +1,6 @@
 <h1>Edit your Cocktail for <%= @cocktail.name %></h1>
 <p><%= @error %></p>
 
-<% if cocktail.id > 203 %>
 
 <form action="/cocktails/<%= @cocktail.id %>" method="post">
 <input type="hidden" name="_method" value="patch">
@@ -15,4 +14,3 @@
     <input type="text" name="image" value="<%=@cocktail.image %>"/>
     <button type="submit"> Edit Beverage</button>
 </form>
-<% end %>
