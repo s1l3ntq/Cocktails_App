@@ -1,4 +1,6 @@
 require './config/environment'
+require 'rubygems'
+require 'sinatra'
 
 class ApplicationController < Sinatra::Base
 
@@ -14,7 +16,7 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
-  
+
   # get '/logout' do
   #   session.destroy
   #   redirect '/'
