@@ -1,29 +1,66 @@
 <%# <p><a href="/">Home</a></p> %>
 
 <%# <p><a href="/cocktails/new">Create your Cocktail</a></p> %>
-<h1>Cocktails</h1>
+
+<div class="container-fluid">
+  <div class="row align-items-center">
+    <div class="col-3 align-self-start">
+      <div class="sidebar">
+        <nav class="nav flex-column side">
+          <ul class="side-group">
+            <li class="side-item">
+              <i class="fas fa-sign-in-alt">🍸</i>
+              <a class="nav-link active" aria-current="page" href="#"><p>Home</p></a>
+            </li>
+            <li class="side-item">
+              <i class="fas fa-sign-in-alt">🍻</i>
+              <a class="nav-link" href="#"><p>Login</p></a>
+            </li>
+            <li class="side-item">
+              <i class="fas fa-sign-in-alt">🥃</i>
+              <a class="nav-link" href="#"><p>Sign Up</p></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="col-9 align-self-start">
+    <h1 id="title">Cocktails</h1>
+ 
+    <% @cocktails.each do |cocktail| %>
+      <div class="card cocktail-group" style="width: 35rem; height: 35rem">
+      <div class="card-body">
+        <h2 class="card-title"><a href="/cocktails/<%= cocktail.id %>"><%= cocktail.name %></a></h2>
+        <img class="card-img-top" src="<%= cocktail.image %>" width="100" height="121" alt="Image unavailable">
+        <!-- <p><%= cocktail.ingredient1 %></p>
+        <p><%= cocktail.ingredient2 %></p>
+        <p><%= cocktail.ingredient3 %></p>
+        <p><%= cocktail.ingredient4 %></p>
+        <p><%= cocktail.ingredient5 %></p>
+        <p><%= cocktail.ingredient6 %></p> --!>
+        <p class="card-text"><%= cocktail.instruction %></p>  
+        </div>
+      </div>
+
+      <% if cocktail.user_id == session[:user_id]  %>
+
+      <% if cocktail.id > 25 %>
+        <form action="/cocktails/<%=cocktail.id%>" method="post">
+          <input type="hidden" name="_method" value="delete"> 
+          <input type="submit" value= "delete">
+        </form>
+        <% end %>
+        <% end %>
+
+      <% end %>
+
+     
 
 
-<% @cocktails.each do |cocktail| %>
-<h2><a href="/cocktails/<%= cocktail.id %>"><%= cocktail.name %></a></h2>
-<!-- <p><%= cocktail.ingredient1 %></p>
-<p2><%= cocktail.ingredient2 %></p2>
-<p3><%= cocktail.ingredient3 %></p3>
-<p4><%= cocktail.ingredient4 %></p4>
-<p5><%= cocktail.ingredient5 %></p5>
-<p6><%= cocktail.ingredient6 %></p6>
-<p7><%= cocktail.instruction %></p7> -->
-<img src="<%= cocktail.image %>" alt="Image unavailable">
-
-<% if cocktail.id > 25 %>
-  <form action="/cocktails/<%=cocktail.id%>" method="post">
-    <input type="hidden" name="_method" value="delete"> 
-    <input type="submit" value= "delete">
-  </form>
-  <% end %>
-<% end %>
-
-
-<%# <form action='/logout' method='get'>
-          <button type="submit" class="btn btn-light btn-sm">Log Out</button>
-      </form> %>
+      <%# <form action='/logout' method='get'>
+                <button type="submit" class="btn btn-light btn-sm">Log Out</button>
+            </form> %>
+    </div>
+  </div>
+</div>

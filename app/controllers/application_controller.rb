@@ -1,6 +1,5 @@
 require './config/environment'
-require 'rubygems'
-require 'sinatra'
+
 
 class ApplicationController < Sinatra::Base
 
@@ -15,10 +14,29 @@ class ApplicationController < Sinatra::Base
     
     erb :welcome
   end
+  helpers do  #allows our views to access these methods 
+    def logged_in?
+        !!current_user
+    end
+  
+
+  def current_user   #memoization
+    @current_user ||=  User.find(session[:user_id]) if session[:user_id]
+
+    
+    #  @current_user =  User.find(session[:user_id])
+    end
+ end
 
 
+private 
+def redirect_if_not_logged_in
+    if !logged_in?
+        redirect '/login'
+    end
+end
   # get '/logout' do
   #   session.destroy
-  #   redirect '/'
+  #   redirect '/login'
   # end
 end
