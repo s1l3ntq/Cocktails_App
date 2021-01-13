@@ -13,6 +13,7 @@ gem 'bcrypt'
 gem 'tux'
 gem 'rest-client'
 gem 'bigdecimal', '1.3.5'
+gem 'bootstrap'
 
 group :test do
   gem 'rspec'
