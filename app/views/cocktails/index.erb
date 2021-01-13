@@ -1,3 +1,4 @@
+<p><a href="/">Home</a></p>
 
 <p><a href="/cocktails/new">Create your Cocktail</a></p>
 <h1>Cocktails</h1>
@@ -12,9 +13,9 @@
 <p5><%= cocktail.ingredient5 %></p5>
 <p6><%= cocktail.ingredient6 %></p6>
 <p7><%= cocktail.instruction %></p7> -->
-<img src="<%= cocktail.image %>" alt="https://img1.mashed.com/img/gallery/the-most-popular-cocktails-to-make-during-quarantine/intro-1590094211.jpg" width="110" height="100">
+<img src="<%= cocktail.image %>" alt="Image unavailable">
 
-<% if cocktail.id > 232 %>
+<% if cocktail.id > 25 %>
   <form action="/cocktails/<%=cocktail.id%>" method="post">
     <input type="hidden" name="_method" value="delete"> 
     <input type="submit" value= "delete">

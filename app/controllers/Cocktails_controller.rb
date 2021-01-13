@@ -20,6 +20,7 @@ class CocktailsController < ApplicationController
     end
 
     get '/cocktails/:id' do #Read
+        # binding.pry
         @cocktail = Cocktail.find(params[:id])
         erb :'/cocktails/show'
     end
@@ -30,11 +31,9 @@ class CocktailsController < ApplicationController
     end
 
     patch '/cocktails/:id' do
-    
         @cocktail = Cocktail.find(params[:id])
-        
-            @cocktail.update(name: params["name"], ingredient1: params["ingredient1"], instruction: params["instruction"], image: params["image"])
-            redirect '/cocktails'
+        @cocktail.update(name: params["name"], ingredient1: params["ingredient1"], instruction: params["instruction"], image: params["image"])
+        redirect '/cocktails'
     end
 
     delete '/cocktails/:id' do

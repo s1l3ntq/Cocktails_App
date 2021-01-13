@@ -1,6 +1,6 @@
-<h1><%= @cocktail.name %></h1>
+<h1><%= @cocktail.name %></h1> 
 
-<img src="<%= @cocktail.image %>" alt="https://img1.mashed.com/img/gallery/the-most-popular-cocktails-to-make-during-quarantine/intro-1590094211.jpg" width="110" height="100">
+<img src="<%= @cocktail.image %>" alt="Image unavailable">
 
 
 <h3> Ingredients: </h3>
@@ -14,4 +14,5 @@
 
 
 
-<p><a href="/cocktails/edit">Edit Beverage</a></p>  
+<p><a href="/cocktails/<%=@cocktail.id%>/edit">Edit Beverage</a></p>  
+
