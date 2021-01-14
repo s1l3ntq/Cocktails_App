@@ -5,7 +5,7 @@
 <div class="container-fluid">
   <div class="row align-items-center">
     <div class="col-3 align-self-start">
-      <div class="sidebar">
+      <%# <div class="sidebar">
         <nav class="nav flex-column side">
           <ul class="side-group">
             <li class="side-item">
@@ -22,33 +22,39 @@
             </li>
           </ul>
         </nav>
-      </div>
+      </div> %>
     </div>
 
-    <div class="col-9 align-self-start cocktail-wrapper">
+    <%# <div class="col-9 align-self-start cocktail-wrapper"> %>
       <h1 id="title">Cocktails</h1>
   
       <% @cocktails.each do |cocktail| %>
-        <div class="card cocktail-group" style="width: 30rem; height: 35rem">
+        <div class="card cocktail-group" style="width: 17rem; height: 17rem">
         <div class="card-body">
-          <h2 class="card-title"><a href="/cocktails/<%= cocktail.id %>"><%= cocktail.name %></a></h2>
-          <img class="card-img-top" src="<%= cocktail.image %>" width="100%" height="80%" alt="Image unavailable">
+          <h2 class="card-title"><a class="btn btn-outline-secondary" aria-current="page"  href="/cocktails/<%= cocktail.id %>"><%= cocktail.name %></a></h2>
+          <%# <a class="btn btn-outline-secondary" aria-current="page" href="/cocktails/new">Create your cocktail</a> %>
+          <img class="card-img-top" src="<%= cocktail.image %>" width="85%" height="45%" alt="Image Not Found" onerror="this.onerror=null;this.src='images/altpickimage.jpg';">
+
+
+
+
+
           <!-- <p><%= cocktail.ingredient1 %></p>
           <p><%= cocktail.ingredient2 %></p>
           <p><%= cocktail.ingredient3 %></p>
           <p><%= cocktail.ingredient4 %></p>
           <p><%= cocktail.ingredient5 %></p>
-          <p><%= cocktail.ingredient6 %></p> --!>
-          <p class="card-text"><%= cocktail.instruction %></p>  
-          </div>
-        </div>
-
+          <p><%= cocktail.ingredient6 %></p> -->
+          <%# <p class="card-text"><%= cocktail.instruction %></p>
         <% if cocktail.user_id == session[:user_id]  %>
           <form action="/cocktails/<%=cocktail.id%>" method="post">
             <input type="hidden" name="_method" value="delete"> 
-            <input type="submit" value= "delete">
+            <input type="submit" value= "delete" class="btn btn-outline-secondary" aria-current="page" >
           </form>
           <% end %>
+          </div>
+        </div>
+
 
           <% end %>
 
@@ -69,7 +75,7 @@
           <p class="card-text"></p>  
           </div>
         </div>
-    --!>
+    -->
 
 
 
