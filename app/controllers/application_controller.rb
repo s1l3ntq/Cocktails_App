@@ -11,38 +11,39 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/" do
-    
     erb :welcome
   end
+
   not_found do
-    # not_user_object
-    erb :'/'
+    redirect '/login'
   end
   
-  error do
-    # not_user_object
-    erb :'/'
-  end
+  # error do
+  #   # not_user_object
+  #   erb :'/'
+  # end
 
 
   helpers do  #allows our views to access these methods 
     def logged_in?
-        !!current_user
+        !!session[:user_id]
     end
-    def random_cocktial
-      if Cocktail.find_by_id(params[:id]) == nil
-        redirect '/cocktails'
+
+    def login_check
+      unless logged_in? 
+        redirect '/login'
       end
     end
   
-
-  def current_user   #memoization
+    def current_user   #memoization
     @current_user ||=  User.find(session[:user_id]) if session[:user_id]
-
-    
-    #  @current_user =  User.find(session[:user_id])
+  end
+  
+    def current_cocktail
+      Cocktail.find_by_id(params[:id])
     end
  end
+
  
  private 
  def redirect_if_not_logged_in
@@ -50,7 +51,14 @@ class ApplicationController < Sinatra::Base
          redirect '/login'
      end
  end
-end
 
+
+
+def missing_cocktail
+  unless current_cocktail != nil
+    redirect '/cocktails'
+  end
+end
+end
 
 
