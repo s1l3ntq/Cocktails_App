@@ -17,9 +17,16 @@ class CocktailsController < ApplicationController
         end
     end
 
+
     get '/cocktails' do #Read
         @cocktails = Cocktail.all.reverse
         erb :'/cocktails/index'
+    end
+
+    get '/cocktails/mycocktails' do
+        @user = current_user
+        @user_cocktails = @user.cocktails
+        erb :'cocktails/mycocktails'
     end
 
     get '/cocktails/:id' do #Read
